@@ -6,3 +6,6 @@
 - Code::Blocks (Windows, Linux, MacOS) **WIP**
 - Xcode (MacOS) **WIP**
 - Eclipse (MacOS) **WIP**
+- CLion (Windows, Linux, MacOS) **WIP**
+- CodeLite (Windows, Linux, MacOS) **WIP**
+- QT Creator (Windows, Linux, MacOS) **WIP**
