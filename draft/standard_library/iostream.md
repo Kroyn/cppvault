@@ -1,7 +1,7 @@
 ## `iostream`: Введення/виведення даних у C++
 `iostream` є стандартною бібліотекою C++, яка надає засоби для введення та виведення даних на консоль, файли та інші потоки. Вона забезпечує об'єктно-орієнтований підхід до введення/виведення, що робить його більш гнучким і зручним у використанні порівняно зі старішими методами.
 
-## Основні компоненти `iostream`:
+## Основні компоненти `iostream`
 ### `std::cout`
 Стандартний вихідний потік, зазвичай пов'язаний з консоллю.
 
@@ -184,4 +184,48 @@ std::cin >> std::ws >> input;
 Дозволяє пропускати або не пропускати пробіли під час вводу.
 ```cpp
 std::cin >> std::noskipws >> input;
+```
+## Додатково
+### Використання `<format>` C++20
+У C++20 ми маємо кращі можливості для друку двійкових файлів за допомогою нової бібліотеки форматів.
+```cpp
+#include <format> // C++20
+#include <iostream>
+
+int main()
+{
+    std::cout << std::format("{:b}\n", 0b1010);  // C++20, {:b} formats the argument as binary digits
+    std::cout << std::format("{:#b}\n", 0b1010); // C++20, {:#b} formats the argument as 0b-prefixed binary digits
+
+	return 0;
+}
+```
+Це виводе:
+```
+1010
+0b1010
+```
+### Використання `<print>` C++23
+У C++23 ми маємо кращі можливості для друку двійкових файлів за допомогою нової бібліотеки форматів (C++20) та бібліотеки друку (C++23):
+```cpp
+#include <format> // C++20
+#include <iostream>
+#include <print> // C++23
+
+int main()
+{
+    std::cout << std::format("{:b}\n", 0b1010);  // C++20, {:b} formats the argument as binary digits
+    std::cout << std::format("{:#b}\n", 0b1010); // C++20, {:#b} formats the argument as 0b-prefixed binary digits
+
+    std::println("{:b} {:#b}", 0b1010, 0b1010);  // C++23, format/print two arguments (same as above) and a newline
+
+    return 0;
+}
+
+```
+Це виводе:
+```
+1010
+0b1010
+1010 0b1010
 ```
